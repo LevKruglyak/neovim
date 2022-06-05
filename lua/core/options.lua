@@ -32,6 +32,8 @@ opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
+opt.pumheight=10            -- limit height of suggestions
+opt.signcolumn = 'yes'
 
 -----------------------------------------------------------
 -- Tabs, indent
@@ -46,6 +48,7 @@ opt.smartindent = true      -- Autoindent new lines
 -- Memory, CPU
 -----------------------------------------------------------
 opt.hidden = true           -- Enable background buffers
+opt.undofile = true         -- Remember undo
 opt.history = 100           -- Remember N lines in history
 opt.lazyredraw = true       -- Faster scrolling
 opt.synmaxcol = 240         -- Max column for syntax highlight

@@ -11,27 +11,21 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- Change leader to a comma
-vim.g.mapleader = ','
+vim.g.mapleader = '='
+map('n', '<=>', '<Esc>')
 
 -----------------------------------------------------------
 -- Neovim shortcuts
 -----------------------------------------------------------
 
--- Map Esc to kk
-map('i', 'kk', '<Esc>')
+-- Remap common misspells
+vim.cmd ':command! WQ wq'
+vim.cmd ':command! Wq wq'
+vim.cmd ':command! W w'
+vim.cmd ':command! Q q'
 
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
-
--- Change split orientation
-map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
-map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
-
--- Move around splits using Ctrl + {h,j,k,l}
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
 
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
@@ -42,6 +36,21 @@ map('i', '<leader>s', '<C-c>:w<CR>')
 
 -- Close all windows and exit from Neovim with <leader> and q
 map('n', '<leader>q', ':qa!<CR>')
+
+-----------------------------------------------------------
+-- Moving around windows and buffers
+-----------------------------------------------------------
+
+-- Buffer moving
+map('n', '<C-p>', ':bp<CR>', { silent = true })
+map('n', '<C-n>', ':bn<CR>', { silent = true })
+map('n', '<C-x>', ':bp<bar>sp<bar>bn<bar>bd<CR>', { silent = true })
+
+-- Tmux navigator
+map('n', '<C-Down>', ':TmuxNavigateDown<CR>')
+map('n', '<C-Up>', ':TmuxNavigateUp<CR>')
+map('n', '<C-Left>', ':TmuxNavigateLeft<CR>')
+map('n', '<C-Right>', ':TmuxNavigateRight<CR>')
 
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts

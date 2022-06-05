@@ -110,6 +110,11 @@ _G.packer_plugins = {
     path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
+  },
   ["monokai.nvim"] = {
     loaded = true,
     path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/monokai.nvim",
@@ -180,18 +185,23 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -1,7 +1,7 @@
 --[[
 
 Neovim init file
-Version: 0.61.0 - 2022/05/28
+Version: 0.1.0
 Maintainer: LevKruglyak
 Website: https://github.com/LevKruglyak/neovim
 

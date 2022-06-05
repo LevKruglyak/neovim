@@ -55,6 +55,9 @@ return packer.startup(function(use)
     end
   }
 
+  -- Tmux navigator
+  use 'christoomey/vim-tmux-navigator'
+
   -- Commentary
   use 'tpope/vim-commentary'
 
@@ -68,16 +71,17 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Color schemes
+  use 'marko-cerovac/material.nvim'
   use 'navarasu/onedark.nvim'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig',
-    requires = {
-      'williamboman/nvim-lsp-installer'
-    },
+    "williamboman/nvim-lsp-installer",
+    {
+      "neovim/nvim-lspconfig",
+    }
   }
 
   -- Autocomplete

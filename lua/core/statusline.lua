@@ -16,15 +16,17 @@ if not status_ok then
   return
 end
 
+vim.cmd [[ set noshowmode ]] --dont show INSERT/COMMAND in the command line
+
 -- Set colorscheme (from core/colors.lua/colorscheme_name)
 local colors = require('core/colors').onedark_dark
 
 local vi_mode_colors = {
   NORMAL = colors.cyan,
   INSERT = colors.green,
-  VISUAL = colors.yellow,
+  VISUAL = colors.purple,
   OP = colors.cyan,
-  BLOCK = colors.cyan,
+  BLOCK = colors.purple,
   REPLACE = colors.red,
   ['V-REPLACE'] = colors.red,
   ENTER = colors.orange,
@@ -54,8 +56,8 @@ local comps = {
   vi_mode = {
     left = {
       provider = function()
-        local label = ' '..vi_mode_utils.get_vim_mode()..' '
-        return label
+        local vi_mode = ' '..vi_mode_utils.get_vim_mode()..' '
+        return vi_mode
       end,
       hl = function()
         local set_color = {
@@ -66,7 +68,7 @@ local comps = {
         }
         return set_color
       end,
-      left_sep = ' ',
+      left_sep = '',
       right_sep = ' ',
     }
   },
@@ -101,30 +103,6 @@ local comps = {
         hl = { fg = colors.fg },
       },
       righ_sep = ' ',
-    },
-    -- Operating system
-    os = {
-      provider = function()
-        local os = vim.bo.fileformat:lower()
-        local icon
-        if os == 'unix' then
-          icon = '  '
-        elseif os == 'mac' then
-          icon = '  '
-        else
-          icon = '  '
-        end
-        return icon .. os
-      end,
-      hl = { fg = colors.fg },
-      left_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
-      right_sep = {
-        str = ' ' .. separator,
-        hl = { fg = colors.fg },
-      },
     },
     -- Line-column
     position = {
@@ -186,8 +164,8 @@ local comps = {
       provider = 'lsp_client_names',
       icon = '  ',
       hl = { fg = colors.pink },
-      left_sep = '  ',
-      right_sep = ' ',
+      left_sep = '| ',
+      right_sep = '',
     }
   },
   -- git info
@@ -247,7 +225,6 @@ table.insert(components.active[2], comps.diagnos.hint)
 table.insert(components.active[2], comps.diagnos.info)
 table.insert(components.active[2], comps.lsp.name)
 table.insert(components.active[2], comps.file.type)
-table.insert(components.active[2], comps.file.os)
 table.insert(components.active[2], comps.file.position)
 table.insert(components.active[2], comps.file.line_percentage)
 

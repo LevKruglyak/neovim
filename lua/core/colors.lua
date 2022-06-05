@@ -12,6 +12,9 @@ if not status_ok then
   return
 end
 
+-- Material style
+vim.g.material_style = "darker"
+
 -- OneDark styles: dark, darker, cool, deep, warm, warmer, light
 require('onedark').setup {
   style = 'darker',
