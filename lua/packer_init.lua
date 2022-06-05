@@ -47,9 +47,6 @@ return packer.startup(function(use)
   -- File explorer
   use 'kyazdani42/nvim-tree.lua'
 
-  -- Indent line
-  use 'lukas-reineke/indent-blankline.nvim'
-
   -- Autopair
   use {
     'windwp/nvim-autopairs',
@@ -57,6 +54,9 @@ return packer.startup(function(use)
       require('nvim-autopairs').setup()
     end
   }
+
+  -- Commentary
+  use 'tpope/vim-commentary'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -73,7 +73,12 @@ return packer.startup(function(use)
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
   -- LSP
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neovim/nvim-lspconfig',
+    requires = {
+      'williamboman/nvim-lsp-installer'
+    },
+  }
 
   -- Autocomplete
   use {
