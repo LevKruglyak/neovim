@@ -116,6 +116,11 @@ return packer.startup(function(use)
     'kdheepak/lazygit.nvim'
   }
 
+  -- fish
+  use {
+    'dag/vim-fish'
+  }
+
   -- Dashboard (start screen)
   use {
     'goolord/alpha-nvim',

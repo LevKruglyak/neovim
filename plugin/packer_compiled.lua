@@ -197,6 +197,11 @@ _G.packer_plugins = {
     path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-fish"] = {
+    loaded = true,
+    path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/vim-fish",
+    url = "https://github.com/dag/vim-fish"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/levkruglyak/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
