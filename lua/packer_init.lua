@@ -111,6 +111,11 @@ return packer.startup(function(use)
     end
   }
 
+  -- lazygit
+  use {
+    'kdheepak/lazygit.nvim'
+  }
+
   -- Dashboard (start screen)
   use {
     'goolord/alpha-nvim',
