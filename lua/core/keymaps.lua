@@ -67,3 +67,12 @@ map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+
+-------------------------------------------------------------
+-- Telescope
+-------------------------------------------------------------
+
+map('n', 'tf', '<cmd>lua require("telescope.builtin").find_files()<cr>')
+map('n', 'tg', '<cmd>lua require("telescope.builtin").live_grep()<cr>')
+map('n', 'tb', '<cmd>lua require("telescope.builtin").buffers()<cr>')
+map('n', 'th', '<cmd>lua require("telescope.builtin").help_tags()<cr>')
