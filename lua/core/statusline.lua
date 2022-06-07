@@ -48,8 +48,6 @@ local lsp_get_diag = function(str)
   return (count > 0) and ' '..count..' ' or ''
 end
 
-local separator = '|'
-
 -- My components
 local comps = {
   -- vi_mode -> NORMAL, INSERT..
@@ -99,7 +97,7 @@ local comps = {
       end,
       hl = { fg = colors.fg },
       left_sep = {
-        str = ' ' .. separator,
+        str = ' ',
         hl = { fg = colors.fg },
       },
       righ_sep = ' ',
@@ -164,7 +162,7 @@ local comps = {
       provider = 'lsp_client_names',
       icon = '  ',
       hl = { fg = colors.pink },
-      left_sep = '| ',
+      left_sep = ' ',
       right_sep = '',
     }
   },
